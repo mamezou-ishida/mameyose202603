@@ -1,50 +1,53 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+# 豆寄席 プレゼンテーション Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Presentation Format
+Marp Markdown形式でスライドを作成する。
+クリーンでシンプルな構造を保ち、1スライドにつき1メッセージを徹底し、オンラインでも視認性の高いスライドを心がける。
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Visual Design & Theme
+告知用画像（`images/title.png`）と世界観やトンマナを統一する。
+- **デザインシステム:** GitHub標準である **Primer CSS** をベースとしたクリーンなデザインとし、アイコンには **Octicons** を活用する。
+- **ベースカラー:** 会社のイメージカラーである **薄い紫色（ライトパープル）** を背景色などのベーストーンとする。
+- **タイトルスライド:** `images/title.png` をベースにレイアウトする。
+- **ロゴの配置:** 各スライドの右上に会社ロゴ（`images/mamezou.png`）を固定で表示する。
+- **フッター要素:** フッターにはページ番号（スライド番号）のみを記載する。イベント名などのテキストは配置しない。
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Typography
+オンラインの画面越しでも視認性の高い、可読性の高いサンセリフ体（ゴシック体）を採用する。
+Primer CSS のタイポグラフィに準拠しつつ、日本語環境で読みやすいフォントを設定する。
+- **メインフォント:** Primer の推奨するシステムゴシック（`-apple-system, BlinkMacSystemFont, "Segoe UI", ...`）をベースとし、日本語は `Noto Sans JP` など視認性の高いものにする。
+- **フォントサイズ:** 見出しは太字で大きく、本文は最低でも `24pt` 以上を確保する。
+- **行間 / 余白:** Primer CSS のSpacingを意識し、十分な余白をとる。
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Slide Layout & Marp Definitions
+Marpでのスライドデザインでは、以下のCSS定義を基本方針とする。
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+```css
+/* ロゴの右上固定配置の例 */
+header {
+  position: absolute;
+  top: 20px;
+  right: 30px; /* 位置はプレビューを見て微調整 */
+  width: 120px;
+  height: 40px;
+  background-image: url('images/mamezou.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right top;
+}
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+/* 背景色（薄い紫色） */
+section {
+  background-color: #F6F3FB; /* 薄い紫色の例（後ほど調整可） */
+}
+```
+※ ページ番号は Marp のディレクティブ `<!-- paginate: true -->` を使用する。
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+## Workflow
+- スライドの構成・原稿はまずMarkdownのテキストとして作成・推敲する。
+- デザインの調整やOcticons・画像のレイアウトは、Marpのプレビューで確認しながら進める。
+- Primer CSS のコンポーネントライクなスタイル（バッジやアラートなど）が必要な場合は、MarpのカスタムCSSで再現する。
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
-
-## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
-
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
-
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.1.0 | **Ratified**: 2026-03-05
