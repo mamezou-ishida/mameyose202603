@@ -33,6 +33,10 @@ jobs:
           marp presentation/slide.md \
             --theme presentation/mamezou-theme.css \
             --html \
+            --template bare \
+            --allow-local-files \
+            --image-dir ./build/images \
+            --image-scale 1 \
             -o build/index.html
           
           # Build PDF
