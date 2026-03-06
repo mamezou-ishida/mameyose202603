@@ -1,0 +1,59 @@
+name: Deploy Marp slide to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+      - 001-mameyose-presentation
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build HTML and PDF using Marp Setup
+        run: |
+          npm install -g @marp-team/marp-cli
+          # Copy images to build dir so they are available
+          mkdir -p build/images
+          cp -r images/* build/images/ || true
+          
+          # Build HTML
+          marp presentation/slide.md \
+            --theme presentation/mamezou-theme.css \
+            --html \
+            -o build/index.html
+          
+          # Build PDF
+          marp presentation/slide.md \
+            --theme presentation/mamezou-theme.css \
+            --allow-local-files \
+            --pdf \
+            -o build/slide.pdf
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./build
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

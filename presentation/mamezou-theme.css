@@ -1,0 +1,54 @@
+/* @theme mamezou-theme */
+
+@import 'default';
+
+section {
+  background-color: #F6F3FB; /* 薄い紫色（ライトパープル） */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans JP", sans-serif;
+  font-size: 28pt; /* 24pt以上を確保 */
+  line-height: 1.5;
+  color: #24292e; /* Primer CSSの基本テキストカラー */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #0366d6; /* Primerブルーの見出し（必要に応じて調整） */
+}
+
+/* ヘッダーのロゴ配置 */
+header {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  width: 120px;
+  height: 40px;
+  background-image: url('../images/mamezou.png'); 
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+
+/* タイトルスライド用の特別なレイアウト */
+section.title-slide {
+  text-align: center;
+}
+
+section.title-slide h1 {
+  font-size: 40pt;
+  margin-top: 15%;
+}
+
+/* Primer風のバッジやアラート用のスタイル */
+.Label {
+  display: inline-block;
+  padding: 0 7px;
+  font-size: 20pt;
+  font-weight: 500;
+  line-height: 18px;
+  white-space: nowrap;
+  border: 1px solid transparent;
+  border-radius: 2em;
+  background-color: #f3f4f6;
+  color: #24292e;
+  border-color: #d0d7de;
+}

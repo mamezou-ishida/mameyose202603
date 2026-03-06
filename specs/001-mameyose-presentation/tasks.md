@@ -16,9 +16,9 @@
 
 **目的**: プロジェクトの初期化とプレゼンテーションの基本構造の作成
 
-- [ ] T001 プロジェクトルートに `presentation/` ディレクトリを作成する
-- [ ] T002 Primer CSS / Octicons と薄い紫色のテーマに基づき、Marpのカスタムテーマファイル `presentation/mamezou-theme.css` を作成する
-- [ ] T003 Marpのフロントマターと設定（テーマ、ページネーション、ヘッダー）を含む、メインのプレゼンファイル `presentation/slide.md` を初期化する
+- [x] T001 プロジェクトルートに `presentation/` ディレクトリを作成する
+- [x] T002 Primer CSS / Octicons と薄い紫色のテーマに基づき、Marpのカスタムテーマファイル `presentation/mamezou-theme.css` を作成する
+- [x] T003 Marpのフロントマターと設定（テーマ、ページネーション、ヘッダー）を含む、メインのプレゼンファイル `presentation/slide.md` を初期化する
 
 ---
 
@@ -26,9 +26,9 @@
 
 **目的**: コンテンツ作成前に完了しておくべきコアとなるインフラ整備
 
-- [ ] T004 MarpのMarkdownをPDF/HTMLにビルドし、GitHub PagesにデプロイするためのGitHub Actionsワークフロー `.github/workflows/deploy.yml` をセットアップする
-- [ ] T005 [P] `presentation/slide.md` にタイトルスライド（表紙）とイントロの構造を作成する（ヘッダーに `mamezou.png` が正しく配置されるように設定する）
-- [ ] T006 [P] `slide.md` にCSSディレクティブを追加し、背景色やレイアウトが視覚的に問題ないか確認する
+- [x] T004 MarpのMarkdownをPDF/HTMLにビルドし、GitHub PagesにデプロイするためのGitHub Actionsワークフロー `.github/workflows/deploy.yml` をセットアップする
+- [x] T005 [P] `presentation/slide.md` にタイトルスライド（表紙）とイントロの構造を作成する（ヘッダーに `mamezou.png` が正しく配置されるように設定する）
+- [x] T006 [P] `slide.md` にCSSディレクティブを追加し、背景色やレイアウトが視覚的に問題ないか確認する
 
 ---
 
