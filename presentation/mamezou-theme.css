@@ -42,11 +42,24 @@ header {
 /* タイトルスライド用の特別なレイアウト */
 section.title-slide {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 section.title-slide h1 {
-  font-size: 40pt;
-  margin-top: 15%;
+  font-size: 45pt;
+  color: #6e40c9;
+  /* Primer CSSの深めの紫色 */
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+section.title-slide h2 {
+  font-size: 30pt;
+  color: #57606a;
+  /* 少し落ち着いたグレー */
+  margin-top: 0;
 }
 
 /* タイトルスライドにはヘッダーロゴを表示しない */
