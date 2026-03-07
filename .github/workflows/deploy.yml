@@ -33,11 +33,11 @@ jobs:
           marp presentation/slide.md \
             --theme presentation/mamezou-theme.css \
             --html \
-            --template bare \
             --allow-local-files \
-            --image-dir ./build/images \
-            --image-scale 1 \
             -o build/index.html
+          
+          # Fix image paths: ../images/ -> ./images/ for GitHub Pages
+          sed -i 's|\.\./images/|./images/|g' build/index.html
           
           # Build PDF
           marp presentation/slide.md \
