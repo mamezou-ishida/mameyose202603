@@ -1,15 +1,16 @@
 ---
 marp: true
 theme: mamezou-theme
-paginate: true
 header: " "
 ---
 <!-- class: title-slide -->
+<!-- paginate: skip -->
 
 ![bg](../images/title.png)
 
 ---
 <!-- class: "" -->
+<!-- paginate: true -->
 
 ## 本日のゴール
 
