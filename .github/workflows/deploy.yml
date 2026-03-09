@@ -29,8 +29,18 @@ jobs:
           mkdir -p build/images
           cp -r images/* build/images/ || true
           
+          # Combine divided markdown files into one for build
+          # Use 00_intro.md as base, then append others without their frontmatters
+          cat presentation/00_intro.md > combined.md
+          for f in presentation/01_*.md presentation/02_*.md presentation/03_*.md; do
+            echo "" >> combined.md
+            echo "---" >> combined.md
+            # Delete lines from 1st to the next --- (stripping frontmatter)
+            sed '1,/---/d' "$f" >> combined.md
+          done
+          
           # Build HTML
-          marp presentation/00_intro.md presentation/01_self_intro.md presentation/02_scrum_ai.md presentation/03_transparency.md \
+          marp combined.md \
             --theme presentation/mamezou-theme.css \
             --html \
             --allow-local-files \
@@ -40,7 +50,7 @@ jobs:
           sed -i 's|\.\./images/|./images/|g' build/index.html
           
           # Build PDF
-          marp presentation/00_intro.md presentation/01_self_intro.md presentation/02_scrum_ai.md presentation/03_transparency.md \
+          marp combined.md \
             --theme presentation/mamezou-theme.css \
             --allow-local-files \
             --pdf \
