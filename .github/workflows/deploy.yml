@@ -32,7 +32,7 @@ jobs:
           # Combine divided markdown files into one for build
           # Use 00_intro.md as base, then append others without their frontmatters
           cat presentation/00_intro.md > combined.md
-          for f in presentation/01_*.md presentation/02_*.md presentation/03_*.md; do
+          for f in presentation/01_*.md presentation/02_*.md presentation/03_*.md presentation/04_*.md presentation/05_*.md presentation/06_*.md; do
             echo "" >> combined.md
             echo "---" >> combined.md
             # Delete lines from 1st to the next --- (stripping frontmatter)
