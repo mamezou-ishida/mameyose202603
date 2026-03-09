@@ -30,7 +30,7 @@ jobs:
           cp -r images/* build/images/ || true
           
           # Build HTML
-          marp presentation/slide.md \
+          marp presentation/00_intro.md presentation/01_self_intro.md presentation/02_scrum_ai.md presentation/03_transparency.md \
             --theme presentation/mamezou-theme.css \
             --html \
             --allow-local-files \
@@ -40,7 +40,7 @@ jobs:
           sed -i 's|\.\./images/|./images/|g' build/index.html
           
           # Build PDF
-          marp presentation/slide.md \
+          marp presentation/00_intro.md presentation/01_self_intro.md presentation/02_scrum_ai.md presentation/03_transparency.md \
             --theme presentation/mamezou-theme.css \
             --allow-local-files \
             --pdf \
