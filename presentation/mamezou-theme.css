@@ -119,3 +119,16 @@ section.title-slide header {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   /* 少し影をつけて見栄えを良くする */
 }
+
+/* 大きく表示するが見切れないように制限する画像用 */
+.large-image {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.large-image img {
+  width: 100%;
+  max-height: 450px;
+  /* スライド下部を見切れさせないための制限 */
+  object-fit: contain;
+}
