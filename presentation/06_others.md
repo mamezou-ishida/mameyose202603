@@ -5,7 +5,7 @@ header: " "
 ---
 <!-- class: title-slide -->
 
-# その他のAI活用
+# 非開発エンジニアによるその他のAI活用
 ## メイキング・個人での活用
 
 ---
@@ -13,7 +13,7 @@ header: " "
 
 ## このスライドの作り方 (メイキング)
 
-実は、このスライド資料自体も、生成AIを用いた<strong>仕様駆動開発 (SDD)</strong> により作成しました。
+このスライド資料自体も、生成AIを用いた<strong>仕様駆動開発 (SDD)</strong> により作成しました。
 
 - 人間が直接Markdownファイルを記述するのではなく、AIエージェントに指示を与えて作成させている。
 - 「いかにコードを書くか」ではなく「プロダクトにどう責任を持つか」という、先ほどのまとめを体現する形となっている。
@@ -53,16 +53,39 @@ header: " "
 
 ---
 
-## 規約 (Constitution) による品質とトーンの統一
+## GitHub Spec Kitの構成要素
 
-Spec Kitの最大のメリットは、最初に<strong>Constitution（規約）</strong>を定めることで、全体を通じて一貫性のあるコード（スライド）が生成されることにある。
+Spec Kitの特徴は、AIに与える情報を役割ごとに分割管理することである。主に以下の4つのドキュメントを用いる。
 
-<div class="small-list" style="margin-top: 20px;">
+<div class="small-list" style="margin-top: 15px;">
 
-- 1スライドにつき1メッセージを徹底し、視認性の高いスライドを心がける。
-- 各スライドの右上に会社ロゴを固定で表示する。
-- 会社のイメージカラーである「薄い紫色」をベースカラーとする。
-- 本文のフォントサイズは24ptを基本とし、縮小しても20ptまでとする。
+- <strong>Constitution (規約)</strong>
+  - 全体で守るべきルールやトーン＆マナー（制約条件）を定義。
+- <strong>Spec (仕様書)</strong>
+  - ユーザーストーリーなどの「何を作るか（What）」を定義。
+- <strong>Plan (計画・設計)</strong>
+  - 仕様をどう実装するか（How）という技術的アプローチを定義。
+- <strong>Tasks (タスク一覧)</strong>
+  - 手順のブレイクダウンとトラッキング（進捗管理）を行う。
+
+</div>
+
+---
+
+## Spec Kitでプレゼン資料を作成するメリット
+
+プロンプトにチャットで依頼する場合と比較し、AIと連携してプレゼン資料を作成する上で以下のようなメリットがある。
+
+<div class="small-list" style="margin-top: 15px;">
+
+- <strong>フォーマットとデザインの一貫性</strong>
+  - AIが設定されたConstitutionを常に参照するため、トーン＆マナーがブレない。
+- <strong>再利用性と保守性</strong>
+  - 一度作ったルールや枠組みは、別のスライド作成時にもそのまま使い回せる。
+- <strong>プロセスと責任の分離</strong>
+  - 人間は「何を伝えるか」に集中し、「どう描画するか」はAIに任せられる。
+- <strong>ソフトウェア開発手法の恩恵</strong>
+  - バージョン管理、CI/CDによる自動化といった開発の利点を享受できる。
 
 </div>
 
@@ -80,19 +103,11 @@ Spec Kitの最大のメリットは、最初に<strong>Constitution（規約）<
 
 ## 個人的なAI活用事例②：スマホアプリ開発
 
-完全にAIに任せたコーディングで、iOSアプリの作成も行っている。
+完全にAIに任せたコーディングによる、Flutterを用いたiOS、Androidアプリの作成。
 
-- 最初は曖昧な指示による「バイブコーディング」で行っていた。
-- 現在は、<strong>GitHub Spec Kitを用いた仕様駆動開発</strong>など、より確実なさまざまな手法を試しながら開発している。
-
-<div class="small-list" style="margin-top: 20px;">
-
-- 🥃 <a href="https://apps.apple.com/jp/app/%E3%82%A6%E3%82%A4%E3%82%B9%E3%82%AD%E3%83%BC%E6%89%8B%E5%B8%B3/id6757503042" target="_blank"><strong>ウイスキー手帳</strong></a>
-  （テイスティング記録アプリ）
-- 🧹 <a href="https://apps.apple.com/jp/app/sprucy/id6758050087" target="_blank"><strong>Sprucy</strong></a>
-  （1分から始める、無理ない片付け習慣アプリ）
-
-</div>
+- 最初は曖昧な指示によるバイブコーディングで行っていた。
+- 現在は、GitHub Spec Kitを用いた仕様駆動開発など、より確実なさまざまな手法を試しながら開発している。
+- AIによる翻訳を活用して、多言語対応のアプリ開発も可能。
 
 ---
 <!-- class: title-slide -->
