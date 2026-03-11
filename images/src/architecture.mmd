@@ -1,0 +1,14 @@
+%% コマンドで生成する場合: npx -y @mermaid-js/mermaid-cli -i images/src/architecture.mmd -o images/architecture.png -b transparent -s 3
+flowchart LR
+    A[Spec] -->|Antigravity| B(Markdown<br>+ CSS)
+    B -->|Git Push| C((GitHub))
+    C -->|GitHub Actions| D{Marp CLI}
+    D -->|HTML生成| E[GitHub Pages]
+    D -->|PDF生成| F[PDF配布]
+
+    style A fill:#ddf4ff,stroke:#0969da,color:#0969da
+    style B fill:#ddf4ff,stroke:#0969da,color:#0969da
+    style C fill:#f6f8fa,stroke:#d0d7de
+    style D fill:#f6f8fa,stroke:#d0d7de
+    style E fill:#e6ffec,stroke:#2da44e,color:#2da44e
+    style F fill:#e6ffec,stroke:#2da44e,color:#2da44e

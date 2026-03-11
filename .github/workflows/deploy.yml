@@ -1,0 +1,78 @@
+name: Deploy Marp slide to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+      - 001-mameyose-presentation
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Install Japanese fonts
+        run: sudo apt-get update && sudo apt-get install -y fonts-noto-cjk
+
+      - name: Build HTML and PDF using Marp Setup
+        run: |
+          npm install -g @marp-team/marp-cli
+          
+          # Generate Mermaid diagram (with puppeteer config for GitHub Actions environment)
+          echo '{"args":["--no-sandbox"]}' > puppeteer-config.json
+          npx -y @mermaid-js/mermaid-cli -i images/src/architecture.mmd -o images/architecture.png -b transparent -s 3 -p puppeteer-config.json
+          
+          # Copy images to build dir so they are available
+          mkdir -p build/images
+          cp -r images/* build/images/ || true
+          
+          # Combine divided markdown files into one for build
+          # Use 00_intro.md as base, then append others without their frontmatters
+          cat presentation/00_intro.md > presentation/combined.md
+          for f in presentation/01_*.md presentation/02_*.md presentation/03_*.md presentation/04_*.md presentation/05_*.md presentation/06_*.md; do
+            echo "" >> presentation/combined.md
+            echo "---" >> presentation/combined.md
+            # Delete lines from 1st to the next --- (stripping frontmatter)
+            sed '1,/---/d' "$f" >> presentation/combined.md
+          done
+          
+          # Build HTML
+          marp presentation/combined.md \
+            --theme presentation/mamezou-theme.css \
+            --html \
+            --allow-local-files \
+            -o build/index.html
+          
+          # Fix image paths: ../images/ -> ./images/ for GitHub Pages
+          sed -i 's|\.\./images/|./images/|g' build/index.html
+          
+          # Build PDF
+          marp presentation/combined.md \
+            --theme presentation/mamezou-theme.css \
+            --allow-local-files \
+            --pdf \
+            -o build/slide.pdf
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./build
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

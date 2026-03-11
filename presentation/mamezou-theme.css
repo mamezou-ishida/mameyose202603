@@ -1,0 +1,134 @@
+/* @theme mamezou-theme */
+
+@import 'default';
+
+section {
+  background-color: #F6F3FB;
+  /* 薄い紫色（ライトパープル） */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans JP", sans-serif;
+  font-size: 28pt;
+  /* 24pt以上を確保 */
+  line-height: 1.5;
+  color: #24292e;
+  /* Primer CSSの基本テキストカラー */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  color: #0366d6;
+  /* Primerブルーの見出し（必要に応じて調整） */
+}
+
+/* ヘッダーのロゴ配置 */
+header {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  left: auto;
+  /* Marpのデフォルト(左揃え)を上書き */
+  width: 150px;
+  height: 50px;
+  background-image: url('../images/mamezou.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+
+/* タイトルスライド用の特別なレイアウト */
+section.title-slide {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+section.title-slide h1 {
+  font-size: 45pt;
+  color: #6e40c9;
+  /* Primer CSSの深めの紫色 */
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+section.title-slide h2 {
+  font-size: 30pt;
+  color: #57606a;
+  /* 少し落ち着いたグレー */
+  margin-top: 0;
+}
+
+/* タイトルスライドにはヘッダーロゴを表示しない */
+section.title-slide header {
+  display: none;
+}
+
+/* Primer風のバッジやアラート用のスタイル */
+.Label {
+  display: inline-block;
+  padding: 0.1em 0.4em;
+  font-size: inherit;
+  font-weight: bold;
+  line-height: inherit;
+  white-space: nowrap;
+  border: 2px solid #d0d7de;
+  border-radius: 2em;
+  background-color: #ddf4ff;
+  color: #0969da;
+  vertical-align: baseline;
+}
+
+/* 引用文や長い箇条書きなどを1行に収めるための縮小リスト用 */
+.small-list li {
+  font-size: 20pt;
+  margin-bottom: 0.3em;
+}
+
+/* 画像とテキストの2カラムレイアウト用 */
+.two-columns {
+  display: grid;
+  grid-template-columns: 2fr 1.2fr;
+  gap: 40px;
+  align-items: center;
+}
+
+/* 画像の角丸表示用 */
+.rounded-image img {
+  border-radius: 12px;
+  max-width: 100%;
+}
+
+/* スライド下部などの中央寄せ画像用 */
+.center-image {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.center-image img {
+  width: 60%;
+  /* 画像サイズを縮小 */
+  max-height: 250px;
+  /* スライドから見切れないように制限 */
+  object-fit: contain;
+  border-radius: 8px;
+  /* 少しだけ角丸にする */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* 少し影をつけて見栄えを良くする */
+}
+
+/* 大きく表示するが見切れないように制限する画像用 */
+.large-image {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.large-image img {
+  width: 100%;
+  max-height: 450px;
+  /* スライド下部を見切れさせないための制限 */
+  object-fit: contain;
+}
