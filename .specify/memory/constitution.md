@@ -22,17 +22,17 @@ Primer CSS のタイポグラフィに準拠しつつ、日本語環境で読み
 - **行間 / 余白:** Primer CSS のSpacingを意識し、十分な余白をとる。
 
 ### IV. Slide Layout & Marp Definitions
-Marpでのスライドデザインでは、以下のCSS定義を基本方針とする。
+Marpでのスライドデザインでは、テーマCSSファイル `presentation/mamezou-theme.css` に定義する。以下は基本方針。
 
 ```css
-/* ロゴの右上固定配置の例 */
+/* ロゴの右上固定配置 */
 header {
   position: absolute;
   top: 20px;
-  right: 30px; /* 位置はプレビューを見て微調整 */
+  right: 30px;
   width: 120px;
   height: 40px;
-  background-image: url('images/mamezou.png');
+  background-image: url('../images/mamezou.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right top;
@@ -40,14 +40,30 @@ header {
 
 /* 背景色（薄い紫色） */
 section {
-  background-color: #F6F3FB; /* 薄い紫色の例（後ほど調整可） */
+  background-color: #F6F3FB;
 }
 ```
 ※ ページ番号は Marp のディレクティブ `<!-- paginate: true -->` を使用する。
 
+### V. Utility Classes
+スライド内で使用するユーティリティCSSクラスは以下の通り。
+
+- **`.small-list`**: 箇条書きのフォントサイズを縮小し、情報量の多いスライドに使用する。
+- **`.large-image`**: 画像を横幅いっぱいに表示しつつ、スライド下部から見切れないように高さを制限する。
+- **`.center-image`**: 画像を中央寄せで60%幅に縮小表示する。
+- **`.two-columns`**: スライド内容を左右2カラムに分割する。
+- **`.rounded-image`**: 画像に角丸を適用して柔らかく見せる。
+
+### VI. Writing Style
+- スライド本文の口調は **「だ・である」調（常体）** で統一する。
+- 引用部分（`>`）は原文を尊重し、口調の統一対象外とする。
+- 強調にはマークダウンの `**` ではなく、HTMLの `<strong>` タグを使用する（テーマCSSで色やスタイルが適用されるため）。
+
 ## Workflow
 - スライドの構成・原稿はまずMarkdownのテキストとして作成・推敲する。
+- テーマCSSファイルは `presentation/mamezou-theme.css` に配置する。
 - デザインの調整やOcticons・画像のレイアウトは、Marpのプレビューで確認しながら進める。
 - Primer CSS のコンポーネントライクなスタイル（バッジやアラートなど）が必要な場合は、MarpのカスタムCSSで再現する。
+- Mermaid等の図は `images/src/` にソースコードを、`images/` に生成画像をそれぞれ管理する。
 
-**Version**: 1.1.0 | **Ratified**: 2026-03-05
+**Version**: 1.2.0 | **Ratified**: 2026-03-12
