@@ -1,7 +1,8 @@
 name: Deploy Marp slide to GitHub Pages
 
 env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+  ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: "true"
 
 on:
   push:
@@ -25,6 +26,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Install Japanese fonts
+        run: sudo apt-get update && sudo apt-get install -y fonts-noto-cjk
+
       - name: Build HTML and PDF using Marp Setup
         run: |
           npm install -g @marp-team/marp-cli
@@ -39,16 +43,16 @@ jobs:
           
           # Combine divided markdown files into one for build
           # Use 00_intro.md as base, then append others without their frontmatters
-          cat presentation/00_intro.md > combined.md
+          cat presentation/00_intro.md > presentation/combined.md
           for f in presentation/01_*.md presentation/02_*.md presentation/03_*.md presentation/04_*.md presentation/05_*.md presentation/06_*.md; do
-            echo "" >> combined.md
-            echo "---" >> combined.md
+            echo "" >> presentation/combined.md
+            echo "---" >> presentation/combined.md
             # Delete lines from 1st to the next --- (stripping frontmatter)
-            sed '1,/---/d' "$f" >> combined.md
+            sed '1,/---/d' "$f" >> presentation/combined.md
           done
           
           # Build HTML
-          marp combined.md \
+          marp presentation/combined.md \
             --theme presentation/mamezou-theme.css \
             --html \
             --allow-local-files \
@@ -58,7 +62,7 @@ jobs:
           sed -i 's|\.\./images/|./images/|g' build/index.html
           
           # Build PDF
-          marp combined.md \
+          marp presentation/combined.md \
             --theme presentation/mamezou-theme.css \
             --allow-local-files \
             --pdf \
