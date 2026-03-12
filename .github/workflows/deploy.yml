@@ -40,7 +40,8 @@ jobs:
           # Use 00_intro.md as base, then append others without their frontmatters
           cat presentation/00_intro.md > presentation/combined.md
           for f in presentation/01_*.md presentation/02_*.md presentation/03_*.md presentation/04_*.md presentation/05_*.md presentation/06_*.md; do
-            echo "" >> presentation/combined.md
+            # Ensure previous content ends with a newline
+            printf '\n' >> presentation/combined.md
             echo "---" >> presentation/combined.md
             # Delete lines from 1st to the next --- (stripping frontmatter)
             sed '1,/---/d' "$f" >> presentation/combined.md
