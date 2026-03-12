@@ -4,7 +4,7 @@ theme: mamezou-theme
 title: 豆寄席2026年3月
 header: " "
 ---
-<!-- class: title-slide -->
+<!-- class: cover-slide -->
 <!-- paginate: skip -->
 
 ![bg](../images/title.png)

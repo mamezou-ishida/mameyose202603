@@ -62,8 +62,8 @@ section.title-slide h2 {
   margin-top: 0;
 }
 
-/* タイトルスライドにはヘッダーロゴを表示しない */
-section.title-slide header {
+/* 表紙スライド（背景画像使用）にはヘッダーロゴを表示しない */
+section.cover-slide header {
   display: none;
 }
 
