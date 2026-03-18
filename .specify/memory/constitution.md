@@ -69,4 +69,4 @@ section {
 - Primer CSS のコンポーネントライクなスタイル（バッジやアラートなど）が必要な場合は、MarpのカスタムCSSで再現する。
 - Mermaid等の図は `images/src/` にソースコードを、`images/` に生成画像をそれぞれ管理する。
 
-**Version**: 1.2.1 | **Ratified**: 2026-03-17
+**Version**: 1.2.2 | **Ratified**: 2026-03-18
