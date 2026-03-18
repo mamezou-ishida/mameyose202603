@@ -52,6 +52,11 @@ section.title-slide {
   color: #ffffff;
 }
 
+/* タイトルスライドではページ番号を非表示にする */
+section.title-slide::after {
+  content: none;
+}
+
 section.title-slide h1 {
   font-size: 45pt;
   color: #ffffff;
