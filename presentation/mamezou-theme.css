@@ -137,7 +137,7 @@ section.cover-slide header {
   list-style: none;
 }
 
-.small-list ul {
+.small-list > ul {
   margin: 0;
   padding-left: 0;
   list-style: none;
@@ -146,6 +146,10 @@ section.cover-slide header {
 .small-list li {
   font-size: 20pt;
   margin-bottom: 0.3em;
+}
+
+/* バッジ(.Label)を含むリスト項目のみgridレイアウトで整列 */
+.small-list li:has(.Label) {
   display: grid;
   grid-template-columns: 10em 1fr;
   gap: 0.5em;
