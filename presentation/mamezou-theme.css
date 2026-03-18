@@ -4,8 +4,8 @@
 @import url('https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap');
 
 section {
-  background-color: #F6F3FB;
-  /* 薄い紫色（ライトパープル） */
+  background-color: #EDE1F8;
+  /* 少し濃い紫色（ライトパープル） */
   font-family: 'BIZ UDPGothic', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 28pt;
   /* 24pt以上を確保 */
@@ -21,11 +21,11 @@ h4,
 h5,
 h6 {
   font-weight: bold;
-  color: #0366d6;
-  /* Primerブルーの見出し（必要に応じて調整） */
+  color: #4b2b82;
+  /* 背景色およびタイトルスライドの色とトーンを合わせたダークパープル */
 }
 
-/* ヘッダーのロゴ配置 */
+/* ヘッダーのロゴ配置（通常スライド用） */
 header {
   position: absolute;
   top: 20px;
@@ -34,10 +34,13 @@ header {
   /* Marpのデフォルト(左揃え)を上書き */
   width: 150px;
   height: 50px;
-  background-image: url('../images/mamezou.png');
+  background-image: url('../images/mamezo.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right top;
+  /* 元が白色のロゴのため、通常スライドでは黒抜きにして表示する */
+  filter: brightness(0);
+  opacity: 0.8;
 }
 
 /* タイトルスライド（各章の表紙）用の特別なレイアウト */
@@ -78,9 +81,10 @@ section.title-slide h2 {
   /* メインタイトルとの差をつける */
 }
 
-/* タイトルスライドのヘッダーロゴを白抜きにする */
+/* タイトルスライドのヘッダーロゴ（白抜き維持） */
 section.title-slide header {
-  filter: brightness(0) invert(1);
+  /* 通常スライドの黒抜き設定を解除し、元の白のまま表示 */
+  filter: none;
   opacity: 0.9;
 }
 
@@ -157,20 +161,20 @@ section.cover-slide header {
 
 /* 強調用アイキャッチスライド（背景・アウトカムなど） */
 section.highlight-slide {
-  background-color: #f1f8ff;
-  background-image: linear-gradient(135deg, #f1f8ff 0%, #c8e1ff 100%);
+  background-color: #ebdff7;
+  background-image: linear-gradient(135deg, #ebdff7 0%, #d4baf2 100%);
   color: #24292e;
 }
 
 section.highlight-slide h1,
 section.highlight-slide h2,
 section.highlight-slide h3 {
-  color: #0366d6;
+  color: #4b2b82;
 }
 
 /* メリハリのため、見出しの下に線を引く */
 section.highlight-slide h2 {
-  border-bottom: 2px solid rgba(3, 102, 214, 0.3);
+  border-bottom: 2px solid rgba(75, 43, 130, 0.3);
   padding-bottom: 0.3em;
   margin-bottom: 1em;
 }

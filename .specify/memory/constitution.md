@@ -10,9 +10,9 @@ Marp Markdown形式でスライドを作成する。
 告知用画像（`images/title.png`）と世界観やトンマナを統一する。
 - **デザインシステム:** GitHub標準である **Primer CSS** をベースとしたクリーンなデザインとし、アイコンには **Octicons** を活用する。
 - **ベースカラー:** 会社のイメージカラーである **薄い紫色（ライトパープル）** を背景色などのベーストーンとする。
-- **タイトルスライド:** 各章の表紙となるスライドは、**ダークパープル系のグラデーション**を背景色とし、リッチな印象を与える。また、ヘッダーの会社ロゴは白抜きに反転させて表示する。
-- **アイキャッチスライド:** 背景やアウトカムなど、通常のスライドとメリハリをつけて強調したいページには、**薄いブルーのグラデーション**を背景色として適用する。
-- **ロゴの配置:** 各スライドの右上に会社ロゴ（`images/mamezou.png`）を固定で表示する。
+- **タイトルスライド:** 各章の表紙となるスライドは、**ダークパープル系のグラデーション**を背景色とし、リッチな印象を与える。また、元の白色の会社ロゴをそのまま白で表示する。
+- **アイキャッチスライド:** 背景やアウトカムなど、通常のスライドとメリハリをつけて強調したいページには、**通常より少し濃い紫色のグラデーション**を背景色として適用する。
+- **ロゴの配置:** 各スライドの右上に会社ロゴ（`images/mamezo.png`）を固定で表示する。元が白色のロゴのため、通常スライドでは黒抜き（`filter: brightness(0)`）にして表示する。
 - **フッター要素:** フッターにはページ番号（スライド番号）のみを記載する。イベント名などのテキストは配置しない。
 
 ### III. Typography
@@ -26,22 +26,25 @@ Primer CSS のタイポグラフィに準拠しつつ、アクセシビリティ
 Marpでのスライドデザインでは、テーマCSSファイル `presentation/mamezou-theme.css` に定義する。以下は基本方針。
 
 ```css
-/* ロゴの右上固定配置 */
+/* ヘッダーのロゴ配置（通常スライド用） */
 header {
   position: absolute;
   top: 20px;
   right: 30px;
   width: 120px;
   height: 40px;
-  background-image: url('../images/mamezou.png');
+  background-image: url('../images/mamezo.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right top;
+  /* 元が白色のロゴのため、通常スライドでは黒抜きにして表示する */
+  filter: brightness(0);
+  opacity: 0.8;
 }
 
-/* 背景色（薄い紫色） */
+/* 背景色（少し濃い紫色） */
 section {
-  background-color: #F6F3FB;
+  background-color: #EDE1F8;
 }
 ```
 ※ ページ番号は Marp のディレクティブ `<!-- paginate: true -->` を使用する。
@@ -69,4 +72,4 @@ section {
 - Primer CSS のコンポーネントライクなスタイル（バッジやアラートなど）が必要な場合は、MarpのカスタムCSSで再現する。
 - Mermaid等の図は `images/src/` にソースコードを、`images/` に生成画像をそれぞれ管理する。
 
-**Version**: 1.2.2 | **Ratified**: 2026-03-18
+**Version**: 1.2.3 | **Ratified**: 2026-03-18

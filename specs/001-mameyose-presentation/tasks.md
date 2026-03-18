@@ -27,7 +27,7 @@
 **目的**: コンテンツ作成前に完了しておくべきコアとなるインフラ整備
 
 - [x] T004 MarpのMarkdownをPDF/HTMLにビルドし、GitHub PagesにデプロイするためのGitHub Actionsワークフロー `.github/workflows/deploy.yml` をセットアップする
-- [x] T005 [P] `presentation/slide.md` にタイトルスライド（表紙）とイントロの構造を作成する（ヘッダーに `mamezou.png` が正しく配置されるように設定する）
+- [x] T005 [P] `presentation/slide.md` にタイトルスライド（表紙）とイントロの構造を作成する（ヘッダーに `mamezo.png` が正しく配置されるように設定する）
 - [x] T006 [P] `slide.md` にCSSディレクティブを追加し、背景色やレイアウトが視覚的に問題ないか確認する
 
 ---
