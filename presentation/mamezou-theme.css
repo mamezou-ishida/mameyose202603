@@ -111,23 +111,39 @@ section.cover-slide header {
 
 /* Primer風のバッジやアラート用のスタイル */
 .Label {
-  display: inline-block;
+  display: block;
   padding: 0.1em 0.4em;
   font-size: inherit;
   font-weight: bold;
   line-height: inherit;
   white-space: nowrap;
-  border: 2px solid #d0d7de;
+  border: 2px solid #c89a0e;
   border-radius: 2em;
-  background-color: #ddf4ff;
-  color: #0969da;
-  vertical-align: baseline;
+  background-color: #fff8e3;
+  color: #7a5500;
+  text-align: center;
 }
 
 /* 引用文や長い箇条書きなどを1行に収めるための縮小リスト用 */
+.small-list {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.small-list ul {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
 .small-list li {
   font-size: 20pt;
   margin-bottom: 0.3em;
+  display: grid;
+  grid-template-columns: 10em 1fr;
+  gap: 0.5em;
+  align-items: baseline;
 }
 
 /* 画像とテキストの2カラムレイアウト用 */
