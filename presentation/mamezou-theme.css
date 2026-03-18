@@ -1,11 +1,12 @@
 /* @theme mamezou-theme */
 
 @import 'default';
+@import url('https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap');
 
 section {
   background-color: #F6F3FB;
   /* 薄い紫色（ライトパープル） */
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans JP", sans-serif;
+  font-family: 'BIZ UDPGothic', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 28pt;
   /* 24pt以上を確保 */
   line-height: 1.5;
