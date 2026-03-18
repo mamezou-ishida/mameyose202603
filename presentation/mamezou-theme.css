@@ -12,6 +12,22 @@ section {
   line-height: 1.5;
   color: #24292e;
   /* Primer CSSの基本テキストカラー */
+  justify-content: center !important;
+  /* コンテンツを中央に寄せる */
+}
+
+/* タイトルスライド以外の見出し（h2）を上部に固定する */
+section:not(.title-slide) h2:first-of-type {
+  position: absolute;
+  top: 70px;
+  left: 70px;
+  right: 70px;
+  margin-top: 0;
+}
+
+/* 上部に固定した見出しの分、コンテンツ領域を下にずらす */
+section:not(.title-slide) {
+  padding-top: 150px !important;
 }
 
 h1,
@@ -46,9 +62,9 @@ header {
 /* タイトルスライド（各章の表紙）用の特別なレイアウト */
 section.title-slide {
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
   /* リッチな表紙らしさを出すダークパープル系のグラデーション */
   background-color: #4b2b82;
   background-image: linear-gradient(135deg, #2b1a4a 0%, #6e40c9 100%);
