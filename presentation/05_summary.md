@@ -16,7 +16,7 @@ header: " "
 - <strong>透明性の強化</strong>
   - Jira×GAS×AIでFour Keysや着地予測を可視化し、チームに<strong>事実という出発点</strong>を提供した。
 - <strong>検査・適応の促進</strong>
-  - レトロスペクティブをAIが定量評価し、しがらみのない第三の視点で<strong>自律的な改善サイクル</strong>を回した。
+  - レトロスペクティブをAIが定量評価し、AIという忖度のない評価で<strong>自律的な改善サイクル</strong>を回した。
 - <strong>これからのスクラムマスター像</strong>
   - AIをパートナーとして活用することで、<strong>人間にしかできない役割</strong>に集中できることを示した。
 
