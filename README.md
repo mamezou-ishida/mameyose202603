@@ -1,17 +1,20 @@
 # 豆寄席 2026年3月
 
-## スクラムマスターのAI活用を考える
+## スクラムマスターのAI活用を考える 〜透明性・検査・適応 三本柱を強化する実践アプローチ〜
 
-スクラムマスターがAIをスクラムイベントの支援パートナーとして活用する実践事例を紹介するプレゼンテーション資料です。
+開発現場での生成AI活用が加速する中、スクラムマスターの業務やプロセスにAIをどう取り入れるべきか。本セッションでは、スクラムの三本柱（透明性・検査・適応）をAIで劇的に強化する実践的なアプローチを紹介します。
 
-### イベント
+指標の可視化や客観的な評価をAIという「強力なパートナー」に任せることで、スクラムマスターが「文化醸成」や「人間関係の調整」といった人間にしか果たせない本質的な役割に集中するためのヒントを提示します。
 
-[豆寄席 2026年3月](https://mamezou.connpass.com/event/386346/)
+### イベント情報
 
-### 公開スライド
+- **イベント名:** [豆寄席 2026年3月](https://mamezou.connpass.com/event/386346/)
+- **登壇者:** 石田 朗大（株式会社豆蔵 ビジネスソリューション事業部）
 
-- [HTML版](https://mamezou-ishida.github.io/mameyose202603)
-- [PDF版](https://mamezou-ishida.github.io/mameyose202603/slide.pdf)
+### 公開資料
+
+- [スライド（HTML版）](https://mamezou-ishida.github.io/mameyose202603)
+- [スライド（PDF版）](https://mamezou-ishida.github.io/mameyose202603/slide.pdf)
 
 ### 構成
 
@@ -24,10 +27,10 @@
 | まとめ | まとめとこれから（AI時代のスクラムマスター） |
 | その他 | メイキング・個人的なAI活用事例 |
 
-### 技術スタック
+### 使用ツール・フレームワーク
 
-- [Marp](https://marp.app/) - Markdownからスライドを生成
-- [Primer CSS](https://primer.style/) - デザインシステム
+- [Marp](https://marp.app/) - Markdown Presentation Ecosystem
+- [Primer CSS](https://primer.style/) - GitHub's Design System
 - [GitHub Spec Kit](https://github.com/github/spec-kit) - 仕様駆動開発フレームワーク
 - [Google Antigravity](https://antigravity.google/) - エージェント型AI
-- GitHub Actions / GitHub Pages - CI/CD・ホスティング
+- GitHub Actions / GitHub Pages - CI/CD & Hosting
