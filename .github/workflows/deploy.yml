@@ -72,7 +72,11 @@ jobs:
                 const h2s = sections[i].querySelectorAll('h2');
                 let found = false;
                 for (const h of h2s) { if (h.textContent.includes(targetText)) { found = true; break; } }
-                if (found) { window.location.hash = '#' + (i + 1); break; }
+                if (found) {
+                  const targetHash = sections[i].id ? '#' + sections[i].id : '#' + (i + 1);
+                  window.location.hash = targetHash;
+                  break;
+                }
               }
             }
           });
