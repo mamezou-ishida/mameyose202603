@@ -34,3 +34,13 @@
 - [GitHub Spec Kit](https://github.com/github/spec-kit) - 仕様駆動開発フレームワーク
 - [Google Antigravity](https://antigravity.google/) - エージェント型AI
 - GitHub Actions / GitHub Pages - CI/CD & Hosting
+
+### スライド操作ショートカット（HTML版）
+
+HTML版のスライドを表示中、以下のキーボードショートカットで各章の先頭スライド（扉）に瞬時にジャンプできます。
+
+- `0` または `Home`: 表紙（最初のスライド）
+- `1` / `2` / `3`: 第1部 / 第2部 / 第3部 の扉スライド
+- `m`: 「まとめ」 の扉スライド
+- `e`: 「エピローグ」 の扉スライド
+- `s`: 「第0部（自己紹介）」 の扉スライド

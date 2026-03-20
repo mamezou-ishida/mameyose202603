@@ -57,6 +57,28 @@ jobs:
           # Fix image paths: ../images/ -> ./images/ for GitHub Pages
           sed -i 's|\.\./images/|./images/|g' build/index.html
           
+          # HTMLにのみショートカット用スクリプトを安全に注入
+          cat << 'EOF' >> build/index.html
+          <script>
+          document.addEventListener('keydown', function(e) {
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+            if (e.ctrlKey || e.metaKey || e.altKey) return;
+            const keyMap = { '1': '第1部', '2': '第2部', '3': '第3部', 'm': 'まとめ', 'e': 'エピローグ', 's': '第0部' };
+            if (e.key === '0' || e.key === 'Home') { window.location.hash = '#1'; return; }
+            if (keyMap[e.key]) {
+              const targetText = keyMap[e.key];
+              const sections = document.querySelectorAll('section');
+              for (let i = 0; i < sections.length; i++) {
+                const h2s = sections[i].querySelectorAll('h2');
+                let found = false;
+                for (const h of h2s) { if (h.textContent.includes(targetText)) { found = true; break; } }
+                if (found) { window.location.hash = '#' + (i + 1); break; }
+              }
+            }
+          });
+          </script>
+          EOF
+          
           # Build PDF
           marp presentation/combined.md \
             --theme presentation/mamezou-theme.css \
