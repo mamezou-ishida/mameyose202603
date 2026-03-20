@@ -64,6 +64,9 @@ jobs:
             --pdf \
             -o build/slide.pdf
 
+          # Copy timer app to build dir
+          cp -r timer build/ || true
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
