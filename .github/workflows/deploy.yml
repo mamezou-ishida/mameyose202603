@@ -63,7 +63,7 @@ jobs:
           document.addEventListener('keydown', function(e) {
             if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
             if (e.ctrlKey || e.metaKey || e.altKey) return;
-            const keyMap = { '1': '第1部', '2': '第2部', '3': '第3部', 'm': 'まとめ', 'e': 'エピローグ', 'p': 'プロローグ' };
+            const keyMap = { '1': '第1部', '2': '第2部', '3': '第3部', 'm': 'まとめ', 'e': 'エピローグ', 's': 'プロローグ' };
             if (e.key === '0' || e.key === 'Home') { window.location.hash = '#1'; return; }
             if (keyMap[e.key]) {
               const targetText = keyMap[e.key];
