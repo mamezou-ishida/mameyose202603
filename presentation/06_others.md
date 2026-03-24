@@ -36,7 +36,7 @@ header: " "
 <div class="small-list">
 
 - <strong>GitHub Spec Kit</strong>
-  - 設計やタスク等のドキュメントを管理するMarkdownベースのフレームワーク。
+  - 仕様駆動開発（SDD）を実践するためのオープンソースツールキット。
 - <strong>Google Antigravity</strong>
   - 設計書をもとに、自律的にコードや資料を生成するエージェント型AI。
 - <strong>Marp</strong>
